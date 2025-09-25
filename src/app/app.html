@@ -1,4 +1,51 @@
 <main>
   <h1>{{title()}}</h1>
+  
+  <details class="instructions">
+    <summary>Instructions & About</summary>
+    <div class="instructions-content">
+      <h3>About</h3>
+      <p>This application helps test HTTP endpoints and diagnose CORS (Cross-Origin Resource Sharing) issues by allowing you to send customized HTTP requests with specific headers and examine the responses in detail.</p>
+
+      <h3>How to Use</h3>
+      <ol>
+        <li><strong>URL and Method:</strong> Enter the target URL and select the HTTP method (GET, POST, etc.).</li>
+        <li><strong>Headers:</strong> The app includes common CORS-related headers by default:
+          <ul>
+            <li><code>Content-Type: application/json</code> - for proper JSON handling</li>
+            <li><code>Origin: http://localhost:4200</code> - to test CORS policies</li>
+          </ul>
+          Add more headers as needed, one per line in the format "Header-Name: Value".
+        </li>
+        <li><strong>Request Body:</strong> For POST/PUT/PATCH methods, enter your JSON request body.</li>
+        <li><strong>Send Request:</strong> Click the "Send Request" button to make the call.</li>
+        <li><strong>Response:</strong> Examine the:
+          <ul>
+            <li>HTTP status code and message</li>
+            <li>Response headers (check for CORS-related headers)</li>
+            <li>Response body</li>
+          </ul>
+        </li>
+      </ol>
+
+      <h3>Common CORS Headers</h3>
+      <ul>
+        <li><code>Access-Control-Allow-Origin</code>: Check which origins are allowed</li>
+        <li><code>Access-Control-Allow-Methods</code>: Available HTTP methods</li>
+        <li><code>Access-Control-Allow-Headers</code>: Permitted request headers</li>
+      </ul>
+
+      <h3>💡 Pro Tip: Monitor CORS Preflight</h3>
+      <p>To see the full CORS interaction, including preflight requests:</p>
+      <ol>
+        <li>Open browser Developer Tools (Press F12 or right-click → Inspect)</li>
+        <li>Go to the "Network" tab</li>
+        <li>Check the "Preserve log" option to keep all requests visible</li>
+        <li>Look for <code>OPTIONS</code> requests that happen before your actual request - these are CORS preflight checks</li>
+        <li>Examine both the preflight request and the actual request to debug CORS issues</li>
+      </ol>
+    </div>
+  </details>
+
   <router-outlet></router-outlet>
 </main>
