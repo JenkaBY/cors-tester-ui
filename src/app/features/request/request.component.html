@@ -1,21 +1,17 @@
 <form [formGroup]="requestForm" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label for="url">URL</label>
+  <div class="url-group">
+    <select id="method" formControlName="method" class="method-select">
+      @for (method of httpMethods; track method) {
+        <option [value]="method">{{ method }}</option>
+      }
+    </select>
     <input
       type="text"
       id="url"
       formControlName="url"
       placeholder="https://api.example.com/endpoint"
+      class="url-input"
     />
-  </div>
-
-  <div class="form-group">
-    <label for="method">HTTP Method</label>
-    <select id="method" formControlName="method">
-      @for (method of httpMethods; track method) {
-        <option [value]="method">{{ method }}</option>
-      }
-    </select>
   </div>
 
   <div class="form-group">
@@ -23,9 +19,9 @@
     <textarea
       id="headers"
       formControlName="headers"
-      placeholder="Content-Type: application/json&#10;Authorization: Bearer token"
-      rows="2"  
-    >Content-Type: application/json</textarea>
+      placeholder="Content-Type: application/json&#10;Origin: http://localhost:4200"
+      rows="2"
+    ></textarea>
   </div>
 
   <div class="form-group">

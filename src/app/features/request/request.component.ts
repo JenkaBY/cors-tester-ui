@@ -19,14 +19,17 @@ export class RequestComponent implements OnInit {
 
   httpMethods = ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'];
 
+  private defaultHeaders = 'Content-Type: application/json';
+  private defaultUrl = 'http://localhost:8080';
+
   constructor(
     private fb: FormBuilder,
     private requestService: RequestService
   ) {
     this.requestForm = this.fb.group({
-      url: ['', [Validators.required, Validators.pattern('https?://.*')]],
+      url: [ this.defaultUrl, [Validators.required, Validators.pattern('https?://.*')]],
       method: ['GET', Validators.required],
-      headers: [''],
+      headers: [this.defaultHeaders],
       body: [''],
     });
   }

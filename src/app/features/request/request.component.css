@@ -9,14 +9,30 @@
   margin-bottom: 20px;
 }
 
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+.url-group {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
 }
 
-select,
-input[type="text"],
+.method-select {
+  width: auto;
+  min-width: 90px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: monospace;
+  background-color: #fff;
+}
+
+.url-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
 textarea {
   width: 100%;
   padding: 8px;
