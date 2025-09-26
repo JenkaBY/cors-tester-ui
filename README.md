@@ -11,7 +11,13 @@ A user-friendly tool for testing HTTP endpoints and diagnosing CORS (Cross-Origi
 - User-friendly interface
 - JSON request/response formatting
 
+## Live Demo
+
+Visit the live application at: https://jenkaby.github.io/cors-tester-ui/
+
 ## Setup
+
+### Local Development
 
 1. Clone the repository
 2. Install dependencies:
@@ -23,6 +29,19 @@ A user-friendly tool for testing HTTP endpoints and diagnosing CORS (Cross-Origi
    npm start
    ```
 4. Open your browser to `http://localhost:4200`
+
+### Deployment
+
+The application is automatically deployed to GitHub Pages when changes are pushed to the master branch. The deployment process:
+
+1. Builds the application with proper base href
+2. Uploads the build artifacts
+3. Deploys to GitHub Pages
+
+To deploy manually:
+1. Push your changes to the master branch
+2. GitHub Actions will automatically build and deploy
+3. Visit the GitHub Pages URL for your repository
 
 ## How to Use
 
